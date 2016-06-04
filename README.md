@@ -15,8 +15,20 @@ This project provides a set of base data feeds in various forms, for other jamma
 Do not use this project except when advised to do so by another project.
 
 It has no useful code by itself. It is only meant to be a dependency of another project.
+In every sense, this is like a parent project in maven. Only it is written as a sibling.
 
-### Why Put Entity Objects (and related) in a Dependency Project?
+### Warning: Isolation and Practicality At Odds Herein:
 
-In that sense, it's like a parent project in maven. Only it is a sibling. Parent projects can quickly weave themselves into a matrix of spaghetti projects, so this just forces things to remain simple and one to one.
+Jammazwan projects are specifically made to facilitate learning by finding the sweet spot between isolation of a small thing to learn, and meaningful context, which can be too broad. More [here](https://betterologist.net/2016/05/jammazwan-projects-for-learning-apache-camel/).
 
+So here's how that screwed up the code in this project. Entity beans are duplicated **_<argh!>-** to only include one particular kind of annotation for that particular use case!! 
+
+This creates 3 City beans! 
+ * City for JPA
+ * City for CSV
+ * City for plain pojo no annotations
+ * and a City interface and CityToJpa class!!
+ 
+Yikes. Stupid!
+
+So that is one thing which might drive you nuts as a developer. **_But it might make it easier for the poor guy who is just encountering his first JPA or CSV/camel-bindy use case._** Which is what jammazwan is all about. Get in, get out, no confusion.
