@@ -10,7 +10,7 @@
 
 This project provides a set of base data feeds in various forms, for other jammazwan projects to consume.
 
-### How This Project Is To Be Used:
+### Use This Project Only As A Dependency:
 
 Do not use this project except when advised to do so by another project.
 
