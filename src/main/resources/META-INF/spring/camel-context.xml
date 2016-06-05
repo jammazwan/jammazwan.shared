@@ -11,25 +11,18 @@
 
 	<import resource="classpath:META-INF/spring/camel-jpa-context.xml" /> 
 
-	<!-- <bean id="aatProcessor" class="aat.AatProcessor" />-->
-	<bean id="cityToJpa" class="jammazwan.jive.CityToJPA" /> 
-	<bean id="surnameToJpa" class="jammazwan.jive.SurnameToJPA" /> 
-	<bean id="companyToJpa" class="jammazwan.jive.CompanyToJPA" /> 
-	<bean id="countryCategoryToJpa" class="jammazwan.jive.CountryCategoryToJPA" /> 
-	<bean id="countryCodeToJpa" class="jammazwan.jive.CountryCodeToJPA" /> 
-	<bean id="nameToJpa" class="jammazwan.jive.NameToJPA" /> 
 	<bean id="routes" class="jammazwan.LoaderRoutes" /> 
 	<!-- <bean id="routes" class="jammazwan.CleanSurnameRoutes" /> -->
 
 	<camelContext id="loader" xmlns="http://camel.apache.org/schema/spring">
 		<routeBuilder ref="routes" />
         <dataFormats>
-            <bindy id="cityDataFormat" type="Csv" classType="jammazwan.csv.CityCsv" />
-            <bindy id="surnameDataFormat" type="Csv" classType="jammazwan.csv.SurnameCsv" />
-            <bindy id="nameDataFormat" type="Csv" classType="jammazwan.csv.NameCsv" />
-            <bindy id="companyDataFormat" type="Csv" classType="jammazwan.csv.CompanyCsv" />
-            <bindy id="countryCategoryDataFormat" type="Csv" classType="jammazwan.csv.CountryCategoryCsv" />
-            <bindy id="countryCodeDataFormat" type="Csv" classType="jammazwan.csv.CountryCodeCsv" />
+            <bindy id="cityDataFormat" type="Csv" classType="jammazwan.entity.City" />
+            <bindy id="surnameDataFormat" type="Csv" classType="jammazwan.entity.Surname" />
+            <bindy id="nameDataFormat" type="Csv" classType="jammazwan.entity.Name" />
+            <bindy id="companyDataFormat" type="Csv" classType="jammazwan.entity.Company" />
+            <bindy id="countryCategoryDataFormat" type="Csv" classType="jammazwan.entity.CountryCategory" />
+            <bindy id="countryCodeDataFormat" type="Csv" classType="jammazwan.entity.CountryCode" />
         </dataFormats>
 	</camelContext>
 

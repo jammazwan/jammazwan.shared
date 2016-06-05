@@ -1,30 +1,37 @@
-package jammazwan.raw;
+package jammazwan.entity;
 
-import jammazwan.City;
+import java.io.Serializable;
 
-public class CityPojo implements City {
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+import org.apache.camel.dataformat.bindy.annotation.CsvRecord;
+import org.apache.camel.dataformat.bindy.annotation.DataField;
+
+@Entity
+@CsvRecord(separator = ",", crlf = "UNIX", skipFirstLine=false)
+public class City implements Serializable {
+	private static final long serialVersionUID = -8973905570404682071L;
+	@Id
+	@DataField(pos = 1)
 	private int rank;
+	@DataField(pos = 2)
 	private String city;
+	@DataField(pos = 3)
 	private String country;
+	@DataField(pos = 4)
 	private int population;
+	@DataField(pos = 5)
 	private int sqkm;
+	@DataField(pos = 6)
 	private int densitySqKm;
 
-	public CityPojo() {
+	public City() {
 		super();
 	}
 
-	public CityPojo(City city) {
-		super();
-		this.city = city.getCity();
-		this.rank = city.getRank();
-		this.country = city.getCountry();
-		this.population = city.getPopulation();
-		this.sqkm = city.getSqkm();
-		this.densitySqKm = city.getDensitySqKm();
-	}
 
-	public CityPojo(int rank, String city, String country, int population, int sqkm, int densitySqKm) {
+	public City(int rank, String city, String country, int population, int sqkm, int densitySqKm) {
 		super();
 		this.rank = rank;
 		this.city = city;

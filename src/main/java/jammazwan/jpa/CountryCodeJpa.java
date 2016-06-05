@@ -1,12 +1,15 @@
 package jammazwan.jpa;
 
-import jammazwan.CountryCode;
+import java.io.Serializable;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+import jammazwan.entity.CountryCode;
+
 @Entity
-public class CountryCodeJpa implements CountryCode {
+public class CountryCodeJpa implements Serializable {
+	private static final long serialVersionUID = -7172973708636640276L;
 	@Id
 	private String name;
 	private String GEC;

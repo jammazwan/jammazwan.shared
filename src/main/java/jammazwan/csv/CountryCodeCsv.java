@@ -1,12 +1,14 @@
 package jammazwan.csv;
 
-import jammazwan.CountryCode;
+import java.io.Serializable;
 
 import org.apache.camel.dataformat.bindy.annotation.CsvRecord;
 import org.apache.camel.dataformat.bindy.annotation.DataField;
 
+import jammazwan.entity.CountryCode;
+
 @CsvRecord(separator = ",", crlf = "UNIX", skipFirstLine = false)
-public class CountryCodeCsv implements CountryCode {
+public class CountryCodeCsv implements Serializable {
 	private static final long serialVersionUID = 8314505776981172547L;
 	@DataField(pos = 1)
 	private String name;

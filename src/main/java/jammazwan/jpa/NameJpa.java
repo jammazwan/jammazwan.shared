@@ -1,23 +1,19 @@
 package jammazwan.jpa;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-import jammazwan.Name;
+import jammazwan.entity.Name;
 
 @Entity
-public class NameJpa implements Name {
+public class NameJpa implements Serializable {
     private static final long serialVersionUID = 414637969243627L;
     @Id
 	private int rank;
 	private String male;
 	private String female;
-
-	public NameJpa(Name name) {
-		this.rank = name.getRank();
-		this.male = name.getMale();
-		this.female = name.getFemale();
-	}
 
 	public int getRank() {
 		return rank;

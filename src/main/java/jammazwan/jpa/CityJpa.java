@@ -1,12 +1,12 @@
 package jammazwan.jpa;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-import jammazwan.City;
-
 @Entity
-public class CityJpa implements City {
+public class CityJpa implements Serializable{
     private static final long serialVersionUID = 41463787969243627L;
     @Id
 	private int rank;
@@ -18,16 +18,6 @@ public class CityJpa implements City {
 	
 	public CityJpa(){
 		super();
-	}
-
-	public CityJpa(City city) {
-		super();
-		this.city = city.getCity();
-		this.rank = city.getRank();
-		this.country = city.getCountry();
-		this.population = city.getPopulation();
-		this.sqkm = city.getSqkm();
-		this.densitySqKm = city.getDensitySqKm();
 	}
 
 	public int getRank() {

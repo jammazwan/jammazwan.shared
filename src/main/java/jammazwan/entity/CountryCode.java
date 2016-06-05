@@ -1,14 +1,33 @@
-package jammazwan.raw;
+package jammazwan.entity;
 
-import jammazwan.CountryCode;
+import java.io.Serializable;
 
-public class CountryCodePojo implements CountryCode {
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+import org.apache.camel.dataformat.bindy.annotation.CsvRecord;
+import org.apache.camel.dataformat.bindy.annotation.DataField;
+
+import jammazwan.entity.CountryCode;
+
+@Entity
+@CsvRecord(separator = ",", crlf = "UNIX", skipFirstLine=false)
+public class CountryCode implements Serializable {
+	private static final long serialVersionUID = -6734470923640263148L;
+	@Id
+	@DataField(pos = 1)
 	private String name;
+	@DataField(pos = 2)
 	private String GEC;
+	@DataField(pos = 3)
 	private String A3;
+	@DataField(pos = 4)
 	private String A2;
+	@DataField(pos = 5)
 	private String num;
+	@DataField(pos = 6)
 	private String STANAG;
+	@DataField(pos = 7)
 	private String internet;
 
 	public String getName() {

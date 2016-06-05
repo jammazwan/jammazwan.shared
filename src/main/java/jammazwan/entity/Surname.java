@@ -1,21 +1,28 @@
-package jammazwan.csv;
+package jammazwan.entity;
 
 import java.io.Serializable;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 import org.apache.camel.dataformat.bindy.annotation.CsvRecord;
 import org.apache.camel.dataformat.bindy.annotation.DataField;
 
+import jammazwan.entity.Surname;
+
+@Entity
 @CsvRecord(separator = ",", crlf = "UNIX", skipFirstLine=false)
-public class SurnameCsv implements Serializable {
-	private static final long serialVersionUID = -5497392637162931929L;
+public class Surname implements Serializable {
+	private static final long serialVersionUID = -5256476810692377016L;
+	@Id
 	@DataField(pos = 1)
 	String name;
 
-	public SurnameCsv() {
+	public Surname() {
 		super();
 	}
 
-	public SurnameCsv(String name) {
+	public Surname(String name) {
 		super();
 		this.name = name;
 	}

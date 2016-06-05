@@ -1,12 +1,14 @@
 package jammazwan.csv;
 
+import java.io.Serializable;
+
 import org.apache.camel.dataformat.bindy.annotation.CsvRecord;
 import org.apache.camel.dataformat.bindy.annotation.DataField;
 
-import jammazwan.City;
+import jammazwan.entity.City;
 
 @CsvRecord(separator = ",", crlf = "UNIX", skipFirstLine=false)
-public class CityCsv implements City {
+public class CityCsv implements Serializable {
     @DataField(pos = 1)
 	private int rank;
     @DataField(pos = 2)
