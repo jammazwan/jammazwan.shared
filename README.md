@@ -21,14 +21,14 @@ In every sense, this is like a parent project in maven. Only it is written as a 
 
 Jammazwan projects are specifically made to facilitate learning by finding the sweet spot between isolation of a small thing to learn, and meaningful context, which can be too broad. More [here](https://betterologist.net/2016/05/jammazwan-projects-for-learning-apache-camel/).
 
-So here's how that screwed up the code in this project. Entity beans are duplicated **_<argh!>-** to only include one particular kind of annotation for that particular use case!! 
+So here's how that screwed up the code in this project. Entity beans are duplicated **_argh!_** to only include only one particular kind of annotation for that particular use case!! 
 
-This creates 3 City beans! 
- * City for JPA
- * City for CSV
- * City for plain pojo no annotations
- * and a City interface and CityToJpa class!!
+This creates 3 City beans and more! You call this clarity?
+ * City with JPA annotations
+ * City with camel-bindy annotations
+ * City with no annotations
+ * and a City interface and CityToJpa class
  
-Yikes. Stupid!
+Yikes. Seens stupid!
 
 So that is one thing which might drive you nuts as a developer. **_But it might make it easier for the poor guy who is just encountering his first JPA or CSV/camel-bindy use case._** Which is what jammazwan is all about. Get in, get out, no confusion.
