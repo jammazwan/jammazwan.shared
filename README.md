@@ -12,23 +12,25 @@ This project provides a set of base data feeds in various forms, for other jamma
 
 ### Use This Project Only As A Dependency:
 
-Do not use this project except when advised to do so by another project.
+This project has no runnable code.
 
-It has no useful code by itself. It is only meant to be a dependency of another project.
 In every sense, this is like a parent project in maven. Only it is written as a sibling.
 
-### Warning: Isolation and Practicality At Odds Herein:
+### Duplicate Copies of Entities:
 
 Jammazwan projects are specifically made to facilitate learning by finding the sweet spot between isolation of a small thing to learn, and meaningful context, which can be too broad. More [here](https://betterologist.net/2016/05/jammazwan-projects-for-learning-apache-camel/).
 
-So here's how that screwed up the code in this project. Entity beans are duplicated **_argh!_** to only include only one particular kind of annotation for that particular use case!! 
+**City.java entity** includes annotations for both **jpa** and **csv/bindy*. So if you are just learning one or another, this can be confusing. Which annotations are required? 
 
-This creates 3 City beans and more! You call this clarity?
- * City with JPA annotations
- * City with camel-bindy annotations
- * City with no annotations
- * and a City interface and CityToJpa class
- 
-Yikes. Seens stupid!
+For this reason only, you will find duplicate entities which are not typically consumed, but instead just code examples
+ * ..jpa.CityJpa with JPA annotations
+ * ..csv.CityCsv with camel-bindy annotations
+ * and so on, for other entities provided in this project
 
-So that is one thing which might drive you nuts as a developer. **_But it might make it easier for the poor guy who is just encountering his first JPA or CSV/camel-bindy use case._** Which is what jammazwan is all about. Get in, get out, no confusion.
+So that is one thing which might drive you nuts as a developer. WTF? **_But it might make it easier for the poor guy who is just encountering his first JPA or CSV/camel-bindy use case._** Which is what jammazwan is all about.
+
+### Utility Classes
+
+You may find other experimental and/or questionable classes in this project, such as HoldContextOpenUntilDone. 
+
+Hopefully, some restraint will be used in the future, else this could create more confusion, rather than less.
