@@ -2,7 +2,7 @@
 
 What's the World Factbook?
 
-The World Factbook [1][2] published by the Central Intelligence Agency (CIA)
+The World Factbook published by the Central Intelligence Agency (CIA)
 offers free country profiles in the public domain (that is, no copyright(s), no rights reserved).
 
 - [1] [The World Factbook](https://www.cia.gov/library/publications/the-world-factbook/)
