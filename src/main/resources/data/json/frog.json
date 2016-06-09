@@ -1,0 +1,13 @@
+[ {
+  "leg" : "long",
+  "name" : "Fred",
+  "smarts" : 22
+}, {
+  "leg" : "long",
+  "name" : "Mary",
+  "smarts" : 29
+}, {
+  "leg" : "medium",
+  "name" : "Bill",
+  "smarts" : 19
+} ]
