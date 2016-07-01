@@ -9,7 +9,7 @@ import org.apache.camel.dataformat.bindy.annotation.CsvRecord;
 import org.apache.camel.dataformat.bindy.annotation.DataField;
 
 @Entity
-@CsvRecord(separator = ",", crlf = "UNIX", skipFirstLine=false)
+@CsvRecord(separator = ",", crlf = "UNIX", skipFirstLine = false)
 public class City implements Serializable {
 	private static final long serialVersionUID = -8973905570404682071L;
 	@Id
@@ -30,7 +30,6 @@ public class City implements Serializable {
 		super();
 	}
 
-
 	public City(int rank, String city, String country, int population, int sqkm, int densitySqKm) {
 		super();
 		this.rank = rank;
@@ -39,6 +38,11 @@ public class City implements Serializable {
 		this.population = population;
 		this.sqkm = sqkm;
 		this.densitySqKm = densitySqKm;
+	}
+
+	public String toString() {
+		return "rank=" + rank + ", city=" + city + ", country=" + country + ", population=" + population + ", sqkm="
+				+ sqkm + ", density=" + densitySqKm;
 	}
 
 	public int getRank() {
